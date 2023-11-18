@@ -12,11 +12,13 @@ Most of these sketches are inspired by [Daniel shiffman](https://thecodingtrain.
 
 ### Frameworks:
 
+<div style="display: flex" >
 <img src="./images/tailwindcss.svg" height = 100px width="100px">
 <img src="./images/React-icon.svg" height = 100px width="100px">
 <img src="./images/Vitejs-logo.svg" height = 100px width="100px">
 <img src="./images/Node.js_logo.svg" height = 100px width="100px">
 <img src="./images/P5js_Logo.svg" height = 100px width="100px">
+</div>
 
 ### npm packages used:
 
