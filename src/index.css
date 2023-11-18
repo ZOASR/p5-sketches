@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	overflow: 0;
+	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+	color: antiquewhite;
+	background-color: rgb(37, 37, 37);
+}
+.react-p5-wrapper {
+	margin: 0;
+	padding: 0;
+}

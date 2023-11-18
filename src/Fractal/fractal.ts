@@ -1,0 +1,69 @@
+import { Vector } from "p5";
+import Line from "./Line";
+import { P5CanvasInstance } from "react-p5-wrapper";
+
+export default class Fractal {
+	start: Vector;
+	end: Vector;
+	a: number;
+	lines: Line[] = [];
+	count = 0;
+	p: P5CanvasInstance;
+	constructor(
+		x: number,
+		y: number,
+		w: number,
+		angle: number,
+		p: P5CanvasInstance
+	) {
+		this.start = p.createVector(x, y);
+		this.end = p.createVector(x + w, y);
+		this.a = angle;
+		this.lines = [];
+		this.count = 0;
+		this.p = p;
+		this.lines.push(new Line(this.start, this.end, this.a, this.p));
+	}
+
+	nextLevel() {
+		this.lines = this.iterate(this.lines);
+		this.count++;
+	}
+
+	restart() {
+		this.count = 0;
+		this.lines = [];
+		this.lines.push(new Line(this.start, this.end, this.a, this.p));
+	}
+
+	getCount() {
+		return this.count;
+	}
+
+	updateAngle(angle: number) {
+		this.a = angle;
+	}
+
+	show() {
+		for (let l of this.lines) {
+			l.show();
+		}
+	}
+
+	iterate(before: Line[]) {
+		let now = [];
+		for (let l of before) {
+			let a = l.start();
+			let b = l.left();
+			let c = l.middle();
+			let d = l.right();
+			let e = l.end();
+
+			now.push(new Line(a, b, this.a, this.p));
+			now.push(new Line(b, c, this.a, this.p));
+			now.push(new Line(c, d, this.a, this.p));
+			now.push(new Line(d, e, this.a, this.p));
+		}
+		return now;
+	}
+}
