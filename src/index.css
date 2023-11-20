@@ -2,14 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "Inter";
+	src: url("/public/fonts/InterVariable.woff2") format("woff");
+}
+
 body,
 html {
 	margin: 0;
 	padding: 0;
 	overflow: 0;
-	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+	font-family: Inter, "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
 		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-	color: antiquewhite;
+	color: #d8d8d8;
 	background-color: rgb(37, 37, 37);
 }
 .react-p5-wrapper {
