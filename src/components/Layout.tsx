@@ -15,11 +15,15 @@ const Layout = () => {
 			<Outlet />
 			{location.pathname != "/" ? (
 				<div className="w-max mx-auto flex justify-center  h-max underline hover:font-extrabold transition-all duration-150">
-					<Link className="flex" to={location.state.sourceCode}>
+					<a
+						className="flex"
+						href={location.state.sourceCode}
+						target="_blank"
+					>
 						<p>View source code</p>
 						<span className="w-2"></span>
 						<FaCode />
-					</Link>
+					</a>
 				</div>
 			) : (
 				<></>

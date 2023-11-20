@@ -30,13 +30,17 @@ const SketchCard = ({ title, imageUrl, description, sourceCode }: Sketch) => {
 					>
 						View Sketch
 					</Link>
-					<Link className="cursor-pointer" to={sourceCode}>
+					<a
+						className="cursor-pointer"
+						href={sourceCode}
+						target="_blank"
+					>
 						<img
 							width={30}
 							src="../../../images/source_code.svg"
 							alt=""
 						/>
-					</Link>
+					</a>
 				</div>
 			</div>
 		</>
