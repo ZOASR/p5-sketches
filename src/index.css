@@ -4,7 +4,7 @@
 
 @font-face {
 	font-family: "Inter";
-	src: url("/public/fonts/InterVariable.woff2") format("woff");
+	src: url("/fonts/InterVariable.woff2") format("woff");
 }
 
 body,
