@@ -15,9 +15,8 @@ const FractalSketch = () => {
 
 	return (
 		<>
-			<div className={style.header + " transition-all"}>
-				<h1 className="text-2xl sm:text-4xl">Fractal</h1>
-				<div className="my-6 w-full sm:w-1/2">
+			<div className={style.header}>
+				<div className="my-6 w-full sm:w-1/3">
 					<p>Angle: {shape.rotation}</p>
 					<Slider
 						min={0}
@@ -47,7 +46,7 @@ const FractalSketch = () => {
 						railStyle={{ backgroundColor: "white" }}
 					/>
 				</div>
-				<div className="my-6 w-full sm:w-1/2">
+				<div className="my-6 w-full sm:w-1/3">
 					<p>No. of iterations: {shape.iterations}</p>
 					<Slider
 						min={1}
