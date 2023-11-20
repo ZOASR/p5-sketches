@@ -13,14 +13,10 @@
 	width: 70%;
 	margin: 1em auto;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	text-align: center;
 	gap: 1em;
-}
-.header * {
-	transition: all 50ms ease-out;
 }
 
 .header h1 {

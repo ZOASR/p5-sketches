@@ -1,0 +1,12 @@
+.sketchGrid {
+	display: grid;
+	width: 80%;
+	margin: 2em auto;
+	border-radius: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background: #404040;
+	padding: 3.125em 2em;
+
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 1em;
+}
