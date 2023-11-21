@@ -7,7 +7,7 @@ import p5Logo from "../../images/P5js_Logo.svg";
 const Footer = () => {
 	return (
 		<>
-			<div className=" footer flex justify-center fixed bottom-0 py-4 w-full">
+			<footer className="footer flex justify-center sticky bottom-0 py-4 w-full">
 				<p>Built With: </p>
 				<div className="stack flex justify-between">
 					<a href="https://vitejs.dev" target="_blank">
@@ -51,7 +51,7 @@ const Footer = () => {
 						/>
 					</a>
 				</div>
-			</div>
+			</footer>
 		</>
 	);
 };
