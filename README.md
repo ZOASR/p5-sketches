@@ -25,6 +25,7 @@ Most of these sketches are inspired by [Daniel shiffman](https://thecodingtrain.
 -   `react-p5-wrapper`
 -   `react-router-dom`
 -   `rc-slider`
+-   `react-icons`
 -   `p5`
 
 ## Get Started
