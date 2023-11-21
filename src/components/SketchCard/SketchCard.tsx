@@ -2,6 +2,7 @@ import style from "./SketchCard.module.css";
 import { Sketch } from "../../sketches_data";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import sourceCodeImage from "../../../images/source_code.svg";
 
 const SketchCard = ({
 	title,
@@ -41,10 +42,13 @@ const SketchCard = ({
 					/>
 				</div>
 				<h1 className="text-3xl">{title}</h1>
-				<p className="leading-normal text-sm font-thin tracking-wider">
-					{description}
-				</p>
-				<div className="flex justify-around">
+				<p
+					dangerouslySetInnerHTML={{
+						__html: description,
+					}}
+					className="leading-relaxed text-sm font-thin tracking-wider"
+				></p>
+				<div className="flex justify-around gap-10 w-full self-end">
 					<Link
 						className="cursor-pointer font-normal hover:underline hover:font-extrabold transition-all duration-150"
 						to={title.toLowerCase()}
@@ -59,8 +63,9 @@ const SketchCard = ({
 					>
 						<img
 							width={30}
-							src="../../../images/source_code.svg"
+							src={sourceCodeImage}
 							alt=""
+							aria-label="Source Code"
 						/>
 					</a>
 				</div>
