@@ -7,11 +7,11 @@ const Layout = () => {
 	const location = useLocation();
 
 	return (
-		<div className="h-screen">
+		<>
 			<Header
 				title={location.state?.title ? location.state?.title : null}
 			/>
-			<section className="my-auto h-full">
+			<section className="h-full">
 				<Outlet />
 			</section>
 			{location.pathname != "/" ? (
@@ -30,7 +30,7 @@ const Layout = () => {
 				<></>
 			)}
 			<Footer />
-		</div>
+		</>
 	);
 };
 
