@@ -1,3 +1,9 @@
+import tailwindLogo from "../../images/tailwindcss.svg";
+import viteLogo from "../../images/Vitejs-logo.svg";
+import nodeLogo from "../../images/Node.js_logo.svg";
+import reactLogo from "../../images/React-icon.svg";
+import p5Logo from "../../images/P5js_Logo.svg";
+
 const Footer = () => {
 	return (
 		<>
@@ -7,7 +13,7 @@ const Footer = () => {
 					<a href="https://vitejs.dev" target="_blank">
 						<img
 							className="logo vite hover:-translate-y-1 transition-all duration-150 cursor-pointer"
-							src="../../images/Vitejs-logo.svg"
+							src={viteLogo}
 							width="30"
 							alt=""
 						/>
@@ -15,7 +21,7 @@ const Footer = () => {
 					<a href="https://tailwindcss.com/" target="_blank">
 						<img
 							className="logo tailwind hover:-translate-y-1 transition-all duration-150 cursor-pointer"
-							src="../../images/tailwindcss.svg"
+							src={tailwindLogo}
 							width="30"
 							alt=""
 						/>
@@ -23,7 +29,7 @@ const Footer = () => {
 					<a href="https://nodejs.org/" target="_blank">
 						<img
 							className="logo node hover:-translate-y-1 transition-all duration-150 cursor-pointer"
-							src="../../images/Node.js_logo.svg"
+							src={nodeLogo}
 							width="30"
 							alt=""
 						/>
@@ -31,7 +37,7 @@ const Footer = () => {
 					<a href="https://react.dev" target="_blank">
 						<img
 							className="logo react hover:-translate-y-1 transition-all duration-150 cursor-pointer"
-							src="../../images/React-icon.svg"
+							src={reactLogo}
 							width="30"
 							alt=""
 						/>
@@ -39,7 +45,7 @@ const Footer = () => {
 					<a href="https://p5js.org" target="_blank">
 						<img
 							className="logo p5 hover:-translate-y-1 transition-all duration-150 cursor-pointer"
-							src="../../images/P5js_Logo.svg"
+							src={p5Logo}
 							width="30"
 							alt=""
 						/>
