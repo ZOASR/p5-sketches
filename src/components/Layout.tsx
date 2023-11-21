@@ -1,8 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
-import { FaCode } from "react-icons/fa";
-import { lazy, Suspense } from "react";
+import { Suspense } from "react";
 
 // const FaCode = lazy(() => import("react-icons/fa"));
 
