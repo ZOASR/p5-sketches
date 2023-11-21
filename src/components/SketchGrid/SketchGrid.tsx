@@ -9,15 +9,13 @@ const SketchGrid = () => {
 			<div className={style.sketchGrid}>
 				{sketches.map((sketch) => {
 					return (
-						<>
-							<SketchCard
-								key={sketch.title}
-								title={sketch.title}
-								description={sketch.description}
-								imageUrl={sketch.imageUrl}
-								sourceCode={sketch.sourceCode}
-							/>
-						</>
+						<SketchCard
+							key={sketch.title}
+							title={sketch.title}
+							description={sketch.description}
+							imageUrl={sketch.imageUrl}
+							sourceCode={sketch.sourceCode}
+						/>
 					);
 				})}
 			</div>
