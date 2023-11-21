@@ -13,11 +13,17 @@ const Layout = () => {
 			<Header
 				title={location.state?.title ? location.state?.title : null}
 			/>
-			<Suspense fallback={<h1>Loading...</h1>}>
-				<section className="h-full">
+			<section className=" flex flex-col h-full justify-center">
+				<Suspense
+					fallback={
+						<h1 className="w-1/2 h-full text-8xl mx-auto text-center filter drop-shadow-2xl">
+							Loading...
+						</h1>
+					}
+				>
 					<Outlet />
-				</section>
-			</Suspense>
+				</Suspense>
+			</section>
 			<Footer />
 		</>
 	);
