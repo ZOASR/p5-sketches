@@ -6,6 +6,7 @@ export interface Sketch {
 	title: string;
 	description: string;
 	sourceCode: string;
+	colors: string[];
 }
 
 export const sketches: Sketch[] = [
@@ -16,6 +17,7 @@ export const sketches: Sketch[] = [
 		imageUrl: flockImage,
 		sourceCode:
 			"https://github.com/ZOASR/p5-sketches/blob/main/src/Fractal/sketch.ts",
+		colors: ["rgba(150, 51, 12, 0.5)", "rgba(10, 10, 10, 0.2)"],
 	},
 	{
 		title: "Fractal",
@@ -24,5 +26,6 @@ export const sketches: Sketch[] = [
 		imageUrl: fractalImage,
 		sourceCode:
 			"https://github.com/ZOASR/p5-sketches/blob/main/src/Flock/sketch.ts",
+		colors: ["rgba(58, 137, 25, 0.2)", "rgba(0, 89, 20, 0.5)"],
 	},
 ];

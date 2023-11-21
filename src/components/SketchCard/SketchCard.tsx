@@ -1,8 +1,23 @@
 import style from "./SketchCard.module.css";
 import { Sketch } from "../../sketches_data";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-const SketchCard = ({ title, imageUrl, description, sourceCode }: Sketch) => {
+const SketchCard = ({
+	title,
+	imageUrl,
+	description,
+	sourceCode,
+	colors,
+}: Sketch) => {
+	const [isHover, setIsHover] = useState<boolean>(false);
+
+	const handleMouseEnter = () => {
+		setIsHover(true);
+	};
+	const handleMouseLeave = () => {
+		setIsHover(false);
+	};
 	return (
 		<>
 			<div
@@ -10,6 +25,13 @@ const SketchCard = ({ title, imageUrl, description, sourceCode }: Sketch) => {
 					style.sketchCard +
 					"  shadow-sm hover:shadow-xl hover:shadow-black/20 hover:-translate-y-2 transition-all duration-150 ease-in-out"
 				}
+				style={{
+					background: isHover
+						? `linear-gradient(45deg,${colors[1]}, ${colors[0]}) padding-box,linear-gradient(135deg, ${colors[0]},  ${colors[1]}) border-box`
+						: undefined,
+				}}
+				onMouseEnter={handleMouseEnter}
+				onMouseLeave={handleMouseLeave}
 			>
 				<div className="w-full rounded-xl bg-white flex justify-center overflow-hidden">
 					<img

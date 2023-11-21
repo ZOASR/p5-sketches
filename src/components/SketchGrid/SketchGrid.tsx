@@ -15,6 +15,7 @@ const SketchGrid = () => {
 							description={sketch.description}
 							imageUrl={sketch.imageUrl}
 							sourceCode={sketch.sourceCode}
+							colors={sketch.colors}
 						/>
 					);
 				})}

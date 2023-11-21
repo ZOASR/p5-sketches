@@ -9,9 +9,6 @@
 	padding: 1em;
 }
 .sketchCard:hover {
-	background: linear-gradient(45deg, #00000000, #ffb70325) padding-box,
-		linear-gradient(135deg, rgba(255, 255, 255, 0.184), #ff000021)
-			border-box;
 	backdrop-filter: blur(10px);
 	-webkit-backdrop-filter: blur(30px);
 }
