@@ -13,7 +13,7 @@ export const sketches: Sketch[] = [
 	{
 		title: "Flock",
 		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			'A simple simulation system for flocking agents (Boids)  refer to this <a style="font-weight: 800; text-decoration: underline;" href="https://www.red3d.com/cwr/boids/" target="_blank">paper</a> (by Craig Reynolds) for more details',
 		imageUrl: flockImage,
 		sourceCode:
 			"https://github.com/ZOASR/p5-sketches/blob/main/src/Fractal/sketch.ts",
@@ -22,7 +22,7 @@ export const sketches: Sketch[] = [
 	{
 		title: "Fractal",
 		description:
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magnaaliqua. Ut enim ad minim veniam, quis nostrud exercitationullamco laboris nisi ut aliquip ex ea commodo consequat.",
+			'A simple generator for the <a style="font-weight: 800; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Koch_snowflake" target="_blank">Koch snowflake curve</a> and other fractals',
 		imageUrl: fractalImage,
 		sourceCode:
 			"https://github.com/ZOASR/p5-sketches/blob/main/src/Flock/sketch.ts",
