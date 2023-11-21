@@ -7,11 +7,13 @@ const Layout = () => {
 	const location = useLocation();
 
 	return (
-		<>
+		<div className="h-screen">
 			<Header
 				title={location.state?.title ? location.state?.title : null}
 			/>
-			<Outlet />
+			<section className="my-auto h-full">
+				<Outlet />
+			</section>
 			{location.pathname != "/" ? (
 				<div className="w-max mx-auto flex justify-center  h-max underline hover:font-extrabold transition-all duration-150">
 					<a
@@ -28,7 +30,7 @@ const Layout = () => {
 				<></>
 			)}
 			<Footer />
-		</>
+		</div>
 	);
 };
 
