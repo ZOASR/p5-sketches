@@ -11,7 +11,7 @@ import { Sketch, sketches } from "./sketches_data";
 
 const router = createBrowserRouter(
 	createRoutesFromElements(
-		<Route path="/" element={<Layout />}>
+		<Route path="/p5-sketches" element={<Layout />}>
 			<Route index element={<SketchGrid />} />
 			{sketches.map((sketch: Sketch) => {
 				const SketchElement = sketch.sketchComponent;
