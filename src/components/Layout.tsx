@@ -2,33 +2,22 @@ import { Outlet, useLocation } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
 import { FaCode } from "react-icons/fa";
+import { lazy, Suspense } from "react";
+
+// const FaCode = lazy(() => import("react-icons/fa"));
 
 const Layout = () => {
 	const location = useLocation();
-
 	return (
 		<>
 			<Header
 				title={location.state?.title ? location.state?.title : null}
 			/>
-			<section className="h-full">
-				<Outlet />
-			</section>
-			{location.pathname != "/" ? (
-				<div className="w-max mx-auto flex justify-center  h-max underline hover:font-extrabold transition-all duration-150">
-					<a
-						className="flex"
-						href={location.state.sourceCode}
-						target="_blank"
-					>
-						<p>View source code</p>
-						<span className="w-2"></span>
-						<FaCode />
-					</a>
-				</div>
-			) : (
-				<></>
-			)}
+			<Suspense fallback={<h1>Loading...</h1>}>
+				<section className="h-full">
+					<Outlet />
+				</section>
+			</Suspense>
 			<Footer />
 		</>
 	);

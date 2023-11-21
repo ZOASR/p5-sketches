@@ -2,6 +2,8 @@ import { sketch } from "./sketch";
 import Slider from "rc-slider";
 import { useState } from "react";
 import { ReactP5Wrapper } from "@p5-wrapper/react";
+import { useLocation } from "react-router-dom";
+import { FaCode } from "react-icons/fa";
 
 interface Vector {
 	a: number | number[];
@@ -11,6 +13,8 @@ interface Vector {
 
 const FlockSketch = () => {
 	const [vector, setVector] = useState<Vector>({ a: 5, c: 2, s: 5 });
+	const location = useLocation();
+
 	const trackStyle = [
 		{ backgroundColor: "grey" },
 		{ backgroundColor: "black" },
@@ -86,6 +90,17 @@ const FlockSketch = () => {
 					c={vector.c}
 					s={vector.s}
 				></ReactP5Wrapper>
+			</div>
+			<div className="w-max mx-auto flex justify-center  h-max underline hover:font-extrabold transition-all duration-150">
+				<a
+					className="flex"
+					href={location.state.sourceCode}
+					target="_blank"
+				>
+					<p>View source code</p>
+					<span className="w-2"></span>
+					<FaCode />
+				</a>
 			</div>
 		</>
 	);

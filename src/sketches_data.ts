@@ -1,6 +1,8 @@
-import CircuitSketch from "./Cirtcuit/CircuitSketch";
-import FlockSketch from "./Flock/FlockSketch";
-import FractalSketch from "./Fractal/FractalSketch";
+import { LazyExoticComponent, lazy } from "react";
+
+const CircuitSketch = lazy(() => import("./Cirtcuit/CircuitSketch"));
+const FlockSketch = lazy(() => import("./Flock/FlockSketch"));
+const FractalSketch = lazy(() => import("./Fractal/FractalSketch"));
 
 import flockImage from "../images/flock_thumb.png";
 import fractalImage from "../images/fractal_thumb.png";
@@ -11,7 +13,7 @@ export interface Sketch {
 	description: string;
 	sourceCode: string;
 	colors: string[];
-	sketchComponent?: () => JSX.Element;
+	sketchComponent?: LazyExoticComponent<() => JSX.Element>;
 }
 
 export const sketches: Sketch[] = [

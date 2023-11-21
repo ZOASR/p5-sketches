@@ -4,6 +4,8 @@ import { useState } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import style from "./FractalSketch.module.css";
+import { useLocation } from "react-router-dom";
+import { FaCode } from "react-icons/fa";
 
 interface Shape {
 	rotation: number | number[];
@@ -12,7 +14,7 @@ interface Shape {
 
 const FractalSketch = () => {
 	const [shape, setShape] = useState<Shape>({ rotation: 30, iterations: 3 });
-
+	const location = useLocation();
 	return (
 		<>
 			<div className={style.header}>
@@ -78,6 +80,17 @@ const FractalSketch = () => {
 					rotation={shape?.rotation}
 					iterations={shape?.iterations}
 				></ReactP5Wrapper>
+			</div>
+			<div className="w-max mx-auto flex justify-center  h-max underline hover:font-extrabold transition-all duration-150">
+				<a
+					className="flex"
+					href={location.state.sourceCode}
+					target="_blank"
+				>
+					<p>View source code</p>
+					<span className="w-2"></span>
+					<FaCode />
+				</a>
 			</div>
 		</>
 	);
