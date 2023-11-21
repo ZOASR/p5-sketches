@@ -1,16 +1,17 @@
 import p5, { Vector } from "p5";
-import { P5CanvasInstance } from "react-p5-wrapper";
+import { P5CanvasInstance } from "@p5-wrapper/react";
+import {FractalSketchProps} from "./sketch";
 
 export default class Line {
 	a: Vector;
 	b: Vector;
 	angle: number;
-	p: P5CanvasInstance;
+	p: P5CanvasInstance<FractalSketchProps>;
 	constructor(
 		start: Vector,
 		end: Vector,
 		angle: number,
-		p: P5CanvasInstance
+		p: P5CanvasInstance<FractalSketchProps>
 	) {
 		this.a = start.copy();
 		this.b = end.copy();

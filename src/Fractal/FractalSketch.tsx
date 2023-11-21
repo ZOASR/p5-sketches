@@ -1,17 +1,17 @@
-import { ReactP5Wrapper } from "react-p5-wrapper";
-import sketch from "./sketch.js";
+import { ReactP5Wrapper } from "@p5-wrapper/react";
+import { sketch } from "./sketch";
 import { useState } from "react";
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import style from "./FractalSketch.module.css";
 
 interface Shape {
-	rotation: number;
-	iterations: number;
+	rotation: number | number[];
+	iterations: number | number[];
 }
 
 const FractalSketch = () => {
-	const [shape, setShape] = useState({ rotation: 30, iterations: 3 });
+	const [shape, setShape] = useState<Shape>({ rotation: 30, iterations: 3 });
 
 	return (
 		<>
@@ -29,7 +29,7 @@ const FractalSketch = () => {
 							90: "90°",
 							180: "180° (Max)",
 						}}
-						onChange={(value) =>
+						onChange={(value: number | number[]) =>
 							setShape((prevShape: Shape) => ({
 								...prevShape,
 								rotation: value,
@@ -54,7 +54,7 @@ const FractalSketch = () => {
 						defaultValue={3}
 						step={1}
 						marks={{ 1: "1", 2: "2", 3: "3", 4: "4", 5: "5" }}
-						onChange={(value) =>
+						onChange={(value: number | number[]) =>
 							setShape((prevShape: Shape) => ({
 								...prevShape,
 								iterations: value,

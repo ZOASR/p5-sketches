@@ -1,5 +1,6 @@
-import { P5CanvasInstance } from "react-p5-wrapper";
-import p5 from "p5";
+import { P5CanvasInstance } from "@p5-wrapper/react";
+import * as p5 from "p5";
+import { FlockSketchProps } from "./sketch";
 
 export default class Boid {
 	p: p5.Vector;
@@ -9,15 +10,16 @@ export default class Boid {
 	maxForce: number;
 	r: number;
 	gravity: p5.Vector;
-	p5: P5CanvasInstance;
-	constructor(x: number, y: number, p_: P5CanvasInstance) {
-		this.p = p_.createVector(x, y);
+
+	p5: P5CanvasInstance<FlockSketchProps>;
+	constructor(x: number, y: number, p_: P5CanvasInstance<FlockSketchProps>) {
+		this.p = new p5.Vector(x, y);
 		this.v = p5.Vector.random2D();
-		this.a = p_.createVector();
+		this.a = new p5.Vector();
 		this.maxSpeed = 4;
 		this.maxForce = 0.04;
 		this.r = 20;
-		this.gravity = p_.createVector(0, 0);
+		this.gravity = new p5.Vector();
 		this.p5 = p_;
 	}
 
@@ -42,7 +44,7 @@ export default class Boid {
 	}
 
 	follow(x: number, y: number) {
-		const t = this.p5.createVector(x, y);
+		const t = new p5.Vector(x, y);
 		const Dir = p5.Vector.sub(t, this.p);
 		Dir.setMag(this.maxSpeed);
 		Dir.sub(this.v);
@@ -52,7 +54,7 @@ export default class Boid {
 
 	separation(boids: Boid[]) {
 		const perceptionRadius = 100;
-		const steering: p5.Vector = this.p5.createVector();
+		const steering: p5.Vector = new p5.Vector();
 		let total = 0;
 		for (const other of boids) {
 			const d = this.p5.dist(this.p.x, this.p.y, other.p.x, other.p.y);
@@ -74,7 +76,7 @@ export default class Boid {
 
 	align(boids: Boid[]) {
 		const perceptionRadius = 100;
-		const steering = this.p5.createVector();
+		const steering = new p5.Vector();
 		let total = 0;
 		for (const other of boids) {
 			const d = p5.prototype.dist(
@@ -99,7 +101,7 @@ export default class Boid {
 
 	cohesion(boids: Boid[]) {
 		const perceptionRadius = 50;
-		const steering = this.p5.createVector();
+		const steering = new p5.Vector();
 		let total = 0;
 		for (const other of boids) {
 			const d: number = p5.prototype.dist(
@@ -144,7 +146,7 @@ export default class Boid {
 		const ha = this.v.heading();
 		const hue = p5.prototype.map(this.v.mag(), 0, this.maxSpeed, 0, 360);
 		this.p5.stroke(hue, 255, 255);
-		const l = p5.Vector.fromAngle(ha);
+		const l: p5.Vector = p5.Vector.fromAngle(ha);
 		l.setMag(this.v.mag() * 2.5);
 		this.p5.translate(this.p.x, this.p.y);
 		this.p5.strokeWeight(3);

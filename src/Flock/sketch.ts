@@ -1,8 +1,14 @@
-import { P5CanvasInstance, SketchProps } from "react-p5-wrapper";
+import { P5CanvasInstance, SketchProps } from "@p5-wrapper/react";
 import Boid from "./Boid";
 import p5 from "p5";
 
-export default function sketch(p: P5CanvasInstance) {
+export type FlockSketchProps = SketchProps & {
+	a: number;
+	c: number;
+	s: number;
+};
+
+export function sketch(p: P5CanvasInstance<FlockSketchProps>) {
 	const flock: Boid[] = [];
 
 	let alignment: number = 0;
@@ -25,7 +31,7 @@ export default function sketch(p: P5CanvasInstance) {
 		}
 	};
 
-	p.updateWithProps = ({ a, c, s }: SketchProps) => {
+	p.updateWithProps = ({ a, c, s }: FlockSketchProps) => {
 		alignment = a;
 		cohesion = c;
 		separation = s;

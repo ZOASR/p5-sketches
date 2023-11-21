@@ -1,24 +1,32 @@
 import Fractal from "./fractal";
-import { P5CanvasInstance } from "react-p5-wrapper";
+import { P5CanvasInstance, SketchProps } from "@p5-wrapper/react";
 
-export default function sketch(p: P5CanvasInstance) {
+export type FractalSketchProps = SketchProps & {
+	rotation: number;
+	iterations: number;
+}
+
+export function sketch(p: P5CanvasInstance<FractalSketchProps>) {
 	let fractal1: Fractal;
 	let fractal2: Fractal;
 	let angle: number = 30;
 	let numberOfIterations: number = 0;
-	const canvasWrapper = document.getElementById("canvas-wrapper");
-	console.log(canvasWrapper);
-	const wrapperComputedStyle = window.getComputedStyle(canvasWrapper, null);
-	let wrapperWidth = canvasWrapper?.clientWidth;
-	wrapperWidth -=
-		parseFloat(wrapperComputedStyle.paddingLeft) +
-		parseFloat(wrapperComputedStyle.paddingRight);
-	let wrapperHeight = canvasWrapper?.clientHeight;
-	wrapperHeight -=
-		parseFloat(wrapperComputedStyle.paddingTop) +
-		parseFloat(wrapperComputedStyle.paddingBottom);
+	const canvasWrapper: HTMLElement | null = document.getElementById("canvas-wrapper");
+	let wrapperWidth: number;
+	let wrapperHeight: number;
+	if (canvasWrapper) {
+		const wrapperComputedStyle: CSSStyleDeclaration = window.getComputedStyle(canvasWrapper, null);
+		wrapperWidth = canvasWrapper?.clientWidth;
+		wrapperWidth -=
+			parseFloat(wrapperComputedStyle.paddingLeft) +
+			parseFloat(wrapperComputedStyle.paddingRight);
+		wrapperHeight = canvasWrapper?.clientHeight;
+		wrapperHeight -=
+			parseFloat(wrapperComputedStyle.paddingTop) +
+			parseFloat(wrapperComputedStyle.paddingBottom);
+	}
 
-	p.updateWithProps = (props) => {
+	p.updateWithProps = (props: FractalSketchProps) => {
 		angle = props?.rotation;
 		numberOfIterations = props?.iterations;
 	};
@@ -42,18 +50,18 @@ export default function sketch(p: P5CanvasInstance) {
 		);
 	};
 	p.windowResized = () => {
-		const wrapperComputedStyle = window.getComputedStyle(
-			canvasWrapper,
-			null
-		);
-		wrapperWidth = canvasWrapper?.clientWidth;
-		wrapperWidth -=
-			parseFloat(wrapperComputedStyle.paddingLeft) +
-			parseFloat(wrapperComputedStyle.paddingRight);
-		wrapperHeight = canvasWrapper?.clientHeight;
-		wrapperHeight -=
-			parseFloat(wrapperComputedStyle.paddingTop) +
-			parseFloat(wrapperComputedStyle.paddingBottom);
+		if (canvasWrapper) {
+			const wrapperComputedStyle: CSSStyleDeclaration =
+				window.getComputedStyle(canvasWrapper, null);
+			wrapperWidth = canvasWrapper?.clientWidth;
+			wrapperWidth -=
+				parseFloat(wrapperComputedStyle.paddingLeft) +
+				parseFloat(wrapperComputedStyle.paddingRight);
+			wrapperHeight = canvasWrapper?.clientHeight;
+			wrapperHeight -=
+				parseFloat(wrapperComputedStyle.paddingTop) +
+				parseFloat(wrapperComputedStyle.paddingBottom);
+		}
 		fractal1 = new Fractal(
 			p.width / 2 - p.width / 4,
 			p.height / 2,

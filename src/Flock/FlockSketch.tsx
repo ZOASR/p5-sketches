@@ -1,10 +1,16 @@
-import { ReactP5Wrapper } from "react-p5-wrapper";
-import sketch from "./sketch";
+import { sketch } from "./sketch";
 import Slider from "rc-slider";
 import { useState } from "react";
+import { ReactP5Wrapper } from "@p5-wrapper/react";
+
+interface Vector {
+	a: number | number[];
+	c: number | number[];
+	s: number | number[];
+}
 
 const FlockSketch = () => {
-	const [vector, setVector] = useState({ a: 5, c: 2, s: 5 });
+	const [vector, setVector] = useState<Vector>({ a: 5, c: 2, s: 5 });
 	const trackStyle = [
 		{ backgroundColor: "grey" },
 		{ backgroundColor: "black" },
@@ -17,7 +23,7 @@ const FlockSketch = () => {
 		" w-10/12 sm:w-1/2 flex flex-col mx-4 gap-4 text-center my-5 mx-auto ";
 	return (
 		<>
-			<div className="flex justify-between w-1/2 mx-auto">
+			<div className="flex gap-3 justify-between w-1/2 mx-auto">
 				<div className={sliderStyle}>
 					<p>Aligment: {vector.a}</p>
 					<Slider
@@ -25,8 +31,8 @@ const FlockSketch = () => {
 						max={10}
 						defaultValue={5}
 						step={0.1}
-						onChange={(value) =>
-							setVector((prevVector) => ({
+						onChange={(value: number | number[]) =>
+							setVector((prevVector: Vector) => ({
 								...prevVector,
 								a: value,
 							}))
@@ -43,8 +49,8 @@ const FlockSketch = () => {
 						max={10}
 						defaultValue={8}
 						step={0.1}
-						onChange={(value) =>
-							setVector((prevVector) => ({
+						onChange={(value: number | number[]) =>
+							setVector((prevVector: Vector) => ({
 								...prevVector,
 								c: value,
 							}))
@@ -61,8 +67,8 @@ const FlockSketch = () => {
 						max={10}
 						defaultValue={5}
 						step={0.1}
-						onChange={(value) =>
-							setVector((prevVector) => ({
+						onChange={(value: number | number[]) =>
+							setVector((prevVector: Vector) => ({
 								...prevVector,
 								s: value,
 							}))

@@ -1,5 +1,4 @@
 const Header = ({ title }: { title: string }) => {
-	console.log(title);
 	return (
 		<div className="header sticky z-10 top-0 flex justify-center w-full p-4">
 			{title ? (
