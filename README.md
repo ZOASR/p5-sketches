@@ -1,6 +1,6 @@
 # p5 sketches
 
-A collections of p5 sketches i made over the years, these are mostly a showcase. view them ~~[here](https://zoasr.github.io/p5-sketches)~~**(not yet deployed)**
+A collection of p5 sketches i made over the years, these are mostly a showcase. view them ~~[here](https://zoasr.github.io/p5-sketches)~~**(not yet deployed)**
 
 Most of these sketches are inspired by [Daniel shiffman](https://thecodingtrain.com/about), a creative coder and teacher, i owe most if not all of what i learned on creative coding and computer graphics to him on his youtube channel [The Coding Train](https://www.youtube.com/@TheCodingTrain) and i recommend everyone to follow his work
 
