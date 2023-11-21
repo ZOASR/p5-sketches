@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ReactP5Wrapper } from "@p5-wrapper/react";
 import { useLocation } from "react-router-dom";
 import { FaCode } from "react-icons/fa";
+import "rc-slider/assets/index.css";
 
 interface Vector {
 	a: number | number[];
