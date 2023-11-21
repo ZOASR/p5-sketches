@@ -1,13 +1,13 @@
 import SketchCard from "../SketchCard/SketchCard";
 import style from "./SketchGrid.module.css";
 
-import { sketches } from "../../sketches_data";
+import { Sketch, sketches } from "../../sketches_data";
 
 const SketchGrid = () => {
 	return (
 		<>
 			<div className={style.sketchGrid}>
-				{sketches.map((sketch) => {
+				{sketches.map((sketch: Sketch) => {
 					return (
 						<SketchCard
 							key={sketch.title}
