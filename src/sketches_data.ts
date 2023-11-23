@@ -3,10 +3,12 @@ import { LazyExoticComponent, lazy } from "react";
 const CircuitSketch = lazy(() => import("./Cirtcuit/CircuitSketch"));
 const FlockSketch = lazy(() => import("./Flock/FlockSketch"));
 const FractalSketch = lazy(() => import("./Fractal/FractalSketch"));
+const GoldenRatioSketch = lazy(() => import("./GoldenRatio/GoldenRatioSketch"));
 
 import flockImage from "../images/flock_thumb.png";
 import fractalImage from "../images/fractal_thumb.png";
 import circuitImage from "../images/circuit_thumb.png";
+import goldenImage from "../images/golden_thumb.png";
 export interface Sketch {
 	imageUrl: string;
 	title: string;
@@ -36,6 +38,16 @@ export const sketches: Sketch[] = [
 			"https://github.com/ZOASR/p5-sketches/blob/main/src/Flock/sketch.ts",
 		colors: ["rgba(58, 137, 25, 0.2)", "rgba(0, 89, 20, 0.5)"],
 		sketchComponent: FractalSketch,
+	},
+	{
+		title: "Golden Ratio",
+		description:
+			'Simulating the formation of a flower using the golden ratio and other custom numbers, check this <a style="font-weight: 800; text-decoration: underline;" href="https://www.youtube.com/watch?v=sj8Sg8qnjOg" target="_blank">numberphile video</a> for more amazing detail!',
+		imageUrl: goldenImage,
+		sourceCode:
+			"https://github.com/ZOASR/p5-sketches/blob/main/src/GoldenRatio/sketch.ts",
+		colors: ["rgba(204, 187, 100, 0.2)", "rgba(126, 117, 62, 0.5)"],
+		sketchComponent: GoldenRatioSketch,
 	},
 	{
 		title: "Circuit",
