@@ -12,7 +12,7 @@ const Header = ({ title }: { title: string }) => {
 			<nav className="flex gap-5  justify-self-end">
 				<Link
 					className=" opacity-25 hover:underline hover:opacity-100 transition-all duration-150 text-center"
-					to="/p5-sketches"
+					to="/"
 				>
 					Sketches
 				</Link>
