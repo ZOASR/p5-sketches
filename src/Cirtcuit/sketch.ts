@@ -18,7 +18,11 @@ export function sketch(p: P5CanvasInstance) {
 	};
 
 	p.windowResized = () => {
-		p.resizeCanvas(innerWidth * 0.5, innerHeight * 0.5);
+		if (innerWidth < 786)
+			p.resizeCanvas(innerWidth * 0.8, innerHeight * 0.5);
+		else
+			p.resizeCanvas(innerWidth * 0.5, innerHeight * 0.5);
+
 	};
 
 	p.draw = () => {
