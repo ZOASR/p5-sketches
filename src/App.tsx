@@ -3,16 +3,17 @@ import {
 	Link,
 	Route,
 	RouterProvider,
-	createBrowserRouter,
+	// createBrowserRouter,
+	createHashRouter,
 	createRoutesFromElements,
 } from "react-router-dom";
 import Layout from "./components/Layout";
 import SketchGrid from "./components/SketchGrid/SketchGrid";
 import { Sketch, sketches } from "./sketches_data";
 
-const router = createBrowserRouter(
+const router = createHashRouter(
 	createRoutesFromElements(
-		<Route path="/p5-sketches" element={<Layout />}>
+		<Route path="/" element={<Layout />}>
 			<Route index element={<SketchGrid />} />
 			{sketches.map((sketch: Sketch) => {
 				const SketchElement = sketch.sketchComponent;
