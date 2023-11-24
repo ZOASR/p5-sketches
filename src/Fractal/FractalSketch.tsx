@@ -19,7 +19,7 @@ const FractalSketch = () => {
 		<>
 			<div className={style.header}>
 				<div className="my-6 w-full sm:w-1/3">
-					<p>Angle: {shape.rotation}</p>
+					<p className="whitespace-nowrap">Angle: {shape.rotation}</p>
 					<Slider
 						min={0}
 						max={180}
@@ -49,7 +49,9 @@ const FractalSketch = () => {
 					/>
 				</div>
 				<div className="my-6 w-full sm:w-1/3">
-					<p>No. of iterations: {shape.iterations}</p>
+					<p className="whitespace-nowrap">
+						No. of iterations: {shape.iterations}
+					</p>
 					<Slider
 						min={1}
 						max={5}

@@ -30,7 +30,7 @@ const FlockSketch = () => {
 		<>
 			<div className="flex gap-3 justify-between w-1/2 mx-auto">
 				<div className={sliderStyle}>
-					<p>Aligment: {vector.a}</p>
+					<p className="whitespace-nowrap">Aligment: {vector.a}</p>
 					<Slider
 						min={0}
 						max={10}
@@ -48,7 +48,7 @@ const FlockSketch = () => {
 					/>
 				</div>
 				<div className={sliderStyle}>
-					<p>Cohesion: {vector.c}</p>
+					<p className="whitespace-nowrap">Cohesion: {vector.c}</p>
 					<Slider
 						min={0}
 						max={10}
@@ -66,7 +66,7 @@ const FlockSketch = () => {
 					/>
 				</div>
 				<div className={sliderStyle}>
-					<p>Seperation: {vector.s}</p>
+					<p className="whitespace-nowrap">Seperation: {vector.s}</p>
 					<Slider
 						min={0}
 						max={10}

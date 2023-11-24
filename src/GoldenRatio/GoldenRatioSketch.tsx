@@ -32,7 +32,7 @@ const GoldenRatioSketch = () => {
 		<>
 			<div className="flex gap-3 justify-between my-4 w-11/12 sm:w-1/2 mx-auto  ">
 				<div className={sliderStyle}>
-					<p>
+					<p className="whitespace-nowrap">
 						Ratio:{" "}
 						{sliderValues.ratio == 1.618 ? "φ" : sliderValues.ratio}
 					</p>
@@ -54,7 +54,9 @@ const GoldenRatioSketch = () => {
 					/>
 				</div>
 				<div className={sliderStyle}>
-					<p>Radius: {sliderValues.radius}</p>
+					<p className="whitespace-nowrap">
+						Radius: {sliderValues.radius}
+					</p>
 					<Slider
 						min={0}
 						max={500}
