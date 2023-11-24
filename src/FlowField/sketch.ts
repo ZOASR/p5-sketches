@@ -6,16 +6,12 @@ export function sketch(p: P5CanvasInstance) {
 	const particles: Particle[] = [];
 	const scale = 5;
 
-	let rows = 0;
-	let cols = 0;
-
 	let flowfield: { vector: p5.Vector; x: number; y: number }[] = [];
 	p.setup = () => {
 		if (innerWidth <= 786)
 			p.createCanvas(innerWidth * 0.8, innerHeight * 0.7);
 		else p.createCanvas(innerWidth * 0.5, innerHeight * 0.7);
-		rows = Math.floor(p.height / scale);
-		cols = Math.floor(p.width / scale);
+
 		for (let i = 0; i < 1000; i++) {
 			particles.push(new Particle(p, scale));
 		}
