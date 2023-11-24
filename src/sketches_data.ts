@@ -5,12 +5,14 @@ const FlockSketch = lazy(() => import("./Flock/FlockSketch"));
 const FractalSketch = lazy(() => import("./Fractal/FractalSketch"));
 const GoldenRatioSketch = lazy(() => import("./GoldenRatio/GoldenRatioSketch"));
 const BlobSketch = lazy(() => import("./Blob/BlobSketch"));
+const FlowFieldSketch = lazy(() => import("./FlowField/FlowFieldSketch"));
 
 import flockImage from "../images/flock_thumb.png";
 import fractalImage from "../images/fractal_thumb.png";
 import circuitImage from "../images/circuit_thumb.png";
 import goldenImage from "../images/golden_thumb.png";
 import bLobImage from "../images/blob_thumb.gif";
+import FlowImage from "../images/flow_thumb.png";
 export interface Sketch {
 	imageUrl: string;
 	title: string;
@@ -68,5 +70,15 @@ export const sketches: Sketch[] = [
 			"https://github.com/ZOASR/p5-sketches/blob/main/src/Blob/sketch.ts",
 		colors: ["rgba(0, 0, 150, 0.5)", "rgba(50, 0, 0, 0.5)"],
 		sketchComponent: BlobSketch,
+	},
+	{
+		title: "Flow Field",
+		description:
+			'A colorful implementation of a flow field if you want more detail on flow fields please check out this <a style="font-weight: 800; text-decoration: underline;" href="https://www.youtube.com/watch?v=MJNy2mdCt20">video</a> ',
+		imageUrl: FlowImage,
+		sourceCode:
+			"https://github.com/ZOASR/p5-sketches/blob/main/src/FlowField/sketch.ts",
+		colors: ["rgba(193, 98, 91, 0.2)", "rgba(58, 82, 169, 0.5)"],
+		sketchComponent: FlowFieldSketch,
 	},
 ];
