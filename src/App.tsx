@@ -23,7 +23,7 @@ const router = createHashRouter(
 							path={sketch.title.toLowerCase()}
 							element={
 								<>
-									<div className="absolute top-10 text-md sm:text-2md underline w-full my-2 md:fixed p-8">
+									<div className="absolute top-10 text-md sm:text-2md underline w-full my-2 md:fixed p-8 -z-10 ">
 										<Link
 											className="opacity-25 hover:underline hover:opacity-100 transition-all duration-150"
 											to=".."
