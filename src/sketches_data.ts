@@ -4,11 +4,13 @@ const CircuitSketch = lazy(() => import("./Cirtcuit/CircuitSketch"));
 const FlockSketch = lazy(() => import("./Flock/FlockSketch"));
 const FractalSketch = lazy(() => import("./Fractal/FractalSketch"));
 const GoldenRatioSketch = lazy(() => import("./GoldenRatio/GoldenRatioSketch"));
+const BlobSketch = lazy(() => import("./Blob/BlobSketch"));
 
 import flockImage from "../images/flock_thumb.png";
 import fractalImage from "../images/fractal_thumb.png";
 import circuitImage from "../images/circuit_thumb.png";
 import goldenImage from "../images/golden_thumb.png";
+import bLobImage from "../images/blob_thumb.gif";
 export interface Sketch {
 	imageUrl: string;
 	title: string;
@@ -57,5 +59,14 @@ export const sketches: Sketch[] = [
 			"https://github.com/ZOASR/p5-sketches/blob/main/src/Circuit/sketch.ts",
 		colors: ["rgba(0, 150, 0, 0.2)", "rgba(0, 53, 0, 0.5)"],
 		sketchComponent: CircuitSketch,
+	},
+	{
+		title: "Dancing Blob",
+		description: "A soothing dancing blob 🐡",
+		imageUrl: bLobImage,
+		sourceCode:
+			"https://github.com/ZOASR/p5-sketches/blob/main/src/Blob/sketch.ts",
+		colors: ["rgba(0, 0, 150, 0.5)", "rgba(50, 0, 0, 0.5)"],
+		sketchComponent: BlobSketch,
 	},
 ];
