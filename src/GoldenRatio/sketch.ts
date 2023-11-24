@@ -13,7 +13,9 @@ export function sketch(p: P5CanvasInstance<GoldenRatioProps>) {
 	const points: { x: number; y: number }[] = [];
 
 	p.setup = () => {
-		p.createCanvas(innerWidth * 0.5, innerHeight * 0.5);
+		if (innerWidth <= 786)
+			p.createCanvas(innerWidth * 0.8, innerHeight * 0.7);
+		else p.createCanvas(innerWidth * 0.5, innerHeight * 0.5);
 		radius = p.height / 2;
 		p.background(0);
 		p.angleMode(p5.prototype.DEGREES);

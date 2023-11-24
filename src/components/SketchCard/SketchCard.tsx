@@ -34,30 +34,37 @@ const SketchCard = ({
 				onMouseEnter={handleMouseEnter}
 				onMouseLeave={handleMouseLeave}
 			>
-				<div className="w-full rounded-xl bg-white flex justify-center overflow-hidden">
+				<div className="w-full h-full rounded-xl bg-white flex justify-center overflow-hidden justify-self-start">
 					<img
-						className="object-cover  w-full"
+						className="object-cover w-full "
 						src={imageUrl}
 						alt={title}
 					/>
 				</div>
-				<h1 className="text-3xl">{title}</h1>
+				<hr className="w-10/12 my-4 opacity-10 shadow-lg rounded-lg ring-1 ring-white" />
+				<h1 className="text-3xl my-0">{title}</h1>
+				<hr
+					style={{ borderColor: colors[0], borderWidth: "2px" }}
+					className="w-1/6 my-2 shadow-lg rounded-lg"
+				/>
 				<p
 					dangerouslySetInnerHTML={{
 						__html: description,
 					}}
-					className="leading-relaxed text-sm font-thin tracking-wider"
+					className="leading-relaxed text-sm sm:text-md font-thin tracking-wider"
 				></p>
-				<div className="flex justify-around gap-10 w-full self-end">
+				<hr className="w-10/12 my-4 opacity-10 shadow-lg rounded-lg ring-1 ring-white" />
+				<div className="flex justify-around align-middle w-full self-end">
 					<Link
-						className="cursor-pointer font-normal hover:underline hover:font-extrabold transition-all duration-150"
+						className="cursor-pointer m-2 h-min p-2 shadow-sm hover:bg-white/50 hover:ring-white/60 bg-white/20  ring-2 ring-white/30 rounded-lg text-xs md:text-md font-normal hover:underline hover:font-extrabold transition-all duration-150"
 						to={title.toLowerCase()}
 						state={{ sourceCode, title: title.toUpperCase() }}
 					>
 						View Sketch
 					</Link>
+					<span className="h-1/2 self-center mx-2 bg-white rounded-lg ring-2 ring-white opacity-10"></span>
 					<a
-						className="cursor-pointer"
+						className="cursor-pointer self-center"
 						href={sourceCode}
 						target="_blank"
 					>

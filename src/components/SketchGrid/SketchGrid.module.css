@@ -7,7 +7,7 @@
 	background: #404040;
 	padding: 2em;
 
-	grid-template-columns: repeat(4, auto);
+	grid-template-columns: repeat(3, auto);
 	grid-gap: 1em;
 }
 

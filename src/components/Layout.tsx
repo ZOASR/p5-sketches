@@ -15,9 +15,9 @@ const Layout = () => {
 			<section className=" flex flex-col h-full justify-center">
 				<Suspense
 					fallback={
-						<h1 className="w-1/2 h-full text-8xl mx-auto text-center filter drop-shadow-2xl">
-							Loading...
-						</h1>
+						<div className="flex justify-center align-middle w-1/2 h-screen text-8xl mx-auto text-center filter drop-shadow-2xl">
+							<h1 className="text-center my-auto">Loading...</h1>
+						</div>
 					}
 				>
 					<Outlet />
