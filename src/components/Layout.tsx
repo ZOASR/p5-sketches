@@ -1,12 +1,19 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "./Footer";
 import Header from "./Header";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 
 // const FaCode = lazy(() => import("react-icons/fa"));
 
 const Layout = () => {
 	const location = useLocation();
+
+	useEffect(() => {
+		if (location.state)
+			document.title = `p5-sketches - ${location.state.title.toLowerCase()}`;
+		else document.title = "p5-sketches";
+	}, [location]);
+
 	return (
 		<>
 			<Header
