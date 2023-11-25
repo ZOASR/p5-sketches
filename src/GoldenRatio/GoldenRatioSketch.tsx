@@ -13,7 +13,7 @@ type GRSliders = {
 
 const GoldenRatioSketch = () => {
 	const [sliderValues, setSliderValues] = useState<GRSliders>({
-		radius: 100,
+		radius: 300,
 		ratio: 1.618,
 	});
 	const location = useLocation();
@@ -38,7 +38,7 @@ const GoldenRatioSketch = () => {
 					</p>
 					<Slider
 						min={0.5}
-						max={2}
+						max={4}
 						defaultValue={1.618}
 						step={0.0001}
 						onChange={(value: number | number[]) =>
@@ -47,7 +47,11 @@ const GoldenRatioSketch = () => {
 								ratio: value,
 							}))
 						}
-						marks={{ 1.618: "φ" }}
+						marks={{
+							1.6180339887: "φ",
+							3.1415926536: "π",
+							2.7182818285: "e",
+						}}
 						trackStyle={trackStyle}
 						handleStyle={handleStyle}
 						railStyle={{ backgroundColor: "white" }}
@@ -59,8 +63,8 @@ const GoldenRatioSketch = () => {
 					</p>
 					<Slider
 						min={0}
-						max={500}
-						defaultValue={200}
+						max={innerWidth * 0.25}
+						defaultValue={300}
 						step={1}
 						onChange={(value: number | number[]) =>
 							setSliderValues((prevSliders: GRSliders) => ({
