@@ -21,6 +21,7 @@ const router = createHashRouter(
 					return (
 						<Route
 							path={sketch.title.toLowerCase()}
+							key={sketch.title.toLowerCase()}
 							element={
 								<>
 									<div className="absolute top-10 text-md sm:text-2md underline w-full my-2 md:fixed p-8 -z-10 ">
