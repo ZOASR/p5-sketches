@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import sourceCodeImage from "../../../images/source_code.svg";
 
+const toTitleCase = (str: string) =>
+	str.replace(
+		/\w\S*/g,
+		(txt) => txt.charAt(0).toUpperCase() + txt.substring(1).toLowerCase()
+	);
+
 const SketchCard = ({
 	title,
 	imageUrl,
@@ -58,7 +64,7 @@ const SketchCard = ({
 					<Link
 						className="cursor-pointer m-2 h-min p-2 shadow-sm hover:bg-white/50 hover:ring-white/60 bg-white/20  ring-2 ring-white/30 rounded-lg text-xs md:text-md font-normal hover:underline hover:font-extrabold transition-all duration-150"
 						to={title.toLowerCase()}
-						state={{ sourceCode, title: title.toUpperCase() }}
+						state={{ sourceCode, title: toTitleCase(title) }}
 					>
 						View Sketch
 					</Link>
