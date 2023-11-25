@@ -34,7 +34,13 @@ const GoldenRatioSketch = () => {
 				<div className={sliderStyle}>
 					<p className="whitespace-nowrap">
 						Ratio:{" "}
-						{sliderValues.ratio == 1.618 ? "φ" : sliderValues.ratio}
+						{sliderValues.ratio == 1.6180339887
+							? "φ"
+							: sliderValues.ratio == 3.1415926536
+							? "π"
+							: sliderValues.ratio == 2.7182818285
+							? "e"
+							: sliderValues.ratio}
 					</p>
 					<Slider
 						min={0.5}
