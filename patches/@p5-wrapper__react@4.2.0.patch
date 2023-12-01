@@ -1,0 +1,14 @@
+diff --git a/package.json b/package.json
+index 33bb7409b89dd57126ccd28b497e4d466c9e94f0..b2ffd0a70d844c727b27f31b54d8642731377d5b 100644
+--- a/package.json
++++ b/package.json
+@@ -14,7 +14,8 @@
+   "exports": {
+     ".": {
+       "import": "./dist/component/react.js",
+-      "require": "./dist/component/react.umd.cjs"
++      "require": "./dist/component/react.umd.cjs",
++      "types": "./dist/component/main.d.ts"
+     }
+   },
+   "scripts": {
