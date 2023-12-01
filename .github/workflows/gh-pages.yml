@@ -3,7 +3,7 @@ name: gh-pages
 on:
   push:
     branches:
-      - main
+      - gh-pages
 
 jobs:
   gh-pages:
