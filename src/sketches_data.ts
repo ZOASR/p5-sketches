@@ -6,6 +6,7 @@ const FractalSketch = lazy(() => import("./Fractal/FractalSketch"));
 const GoldenRatioSketch = lazy(() => import("./GoldenRatio/GoldenRatioSketch"));
 const BlobSketch = lazy(() => import("./Blob/BlobSketch"));
 const FlowFieldSketch = lazy(() => import("./FlowField/FlowFieldSketch"));
+const SandPilesSketch = lazy(() => import("./SandPiles/SandPilesSketch"));
 
 import flockImage from "../images/flock_thumb.png";
 import fractalImage from "../images/fractal_thumb.png";
@@ -80,5 +81,15 @@ export const sketches: Sketch[] = [
 			"https://github.com/ZOASR/p5-sketches/blob/main/src/FlowField/sketch.ts",
 		colors: ["rgba(193, 98, 91, 0.2)", "rgba(58, 82, 169, 0.5)"],
 		sketchComponent: FlowFieldSketch,
+	},
+	{
+		title: "Sand Piles",
+		description:
+			'Sanpiles are a <a style="font-weight: 800; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Cellular_automaton"> cellular automaton</a> simulation depicting the toppling of sand particles into a grid of cells and coloring each cell depending on the amount of sand particles it has',
+		imageUrl: FlowImage,
+		sourceCode:
+			"https://github.com/ZOASR/p5-sketches/blob/main/src/FlowField/sketch.ts",
+		colors: ["rgba(193, 98, 91, 0.2)", "rgba(58, 82, 169, 0.5)"],
+		sketchComponent: SandPilesSketch,
 	},
 ];
