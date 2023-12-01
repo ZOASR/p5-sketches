@@ -86,7 +86,7 @@ export const sketches: Sketch[] = [
 	{
 		title: "Sand Piles",
 		description:
-			'Sanpiles are a <a style="font-weight: 800; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Cellular_automaton"> cellular automaton</a> simulation depicting the toppling of sand particles into a grid of cells and coloring each cell depending on the amount of sand particles it has',
+			'Sandpiles are a <a style="font-weight: 800; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Cellular_automaton"> cellular automaton</a> simulation depicting the toppling of sand particles into a grid of cells and coloring each cell depending on the amount of sand particles it has',
 		imageUrl: SandPilesImage,
 		sourceCode:
 			"https://github.com/ZOASR/p5-sketches/blob/main/src/SandPiles/sketch.ts",
