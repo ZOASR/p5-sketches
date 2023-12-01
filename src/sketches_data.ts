@@ -14,6 +14,7 @@ import circuitImage from "../images/circuit_thumb.png";
 import goldenImage from "../images/golden_thumb.png";
 import bLobImage from "../images/blob_thumb.gif";
 import FlowImage from "../images/flow_thumb.png";
+import SandPilesImage from "../images/sandpiles_thumb.png";
 export interface Sketch {
 	imageUrl: string;
 	title: string;
@@ -86,10 +87,10 @@ export const sketches: Sketch[] = [
 		title: "Sand Piles",
 		description:
 			'Sanpiles are a <a style="font-weight: 800; text-decoration: underline;" href="https://en.wikipedia.org/wiki/Cellular_automaton"> cellular automaton</a> simulation depicting the toppling of sand particles into a grid of cells and coloring each cell depending on the amount of sand particles it has',
-		imageUrl: FlowImage,
+		imageUrl: SandPilesImage,
 		sourceCode:
-			"https://github.com/ZOASR/p5-sketches/blob/main/src/FlowField/sketch.ts",
-		colors: ["rgba(193, 98, 91, 0.2)", "rgba(58, 82, 169, 0.5)"],
+			"https://github.com/ZOASR/p5-sketches/blob/main/src/SandPiles/sketch.ts",
+		colors: ["rgba(250, 100, 30, 0.2)", "rgba(180, 80, 20, 0.5)"],
 		sketchComponent: SandPilesSketch,
 	},
 ];
